@@ -27,4 +27,9 @@ constants = np.array([7,1],dtype=np.dtype(float))
 print(coefficients.shape)
 print(constants)
 
+#calculating the determinant of matrix coefficient
+print(np.linalg.det(coefficients))
 
+#horizontally stacking the two matrices
+#horizontally stacking the coefficients and constants and as the matrix constants has only one row , so we reshaped it into having 2 rows and 1 column
+np.hstack(( coefficients,constants.reshape(2,1)))
