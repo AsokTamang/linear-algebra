@@ -45,3 +45,29 @@ y2 = (1 - (3*x)) / 3  #here too but from the second equation
 plt.plot(x,y1,color="red")
 plt.plot(x,y2,color="blue")
 plt.show()
+
+
+#System of Linear Equations with No Solutions
+a = np.array([
+    [-1,3],
+    [3,-9]
+], dtype=np.dtype(float))
+b = np.array([7,1],dtype=np.dtype(float))
+
+det_of_a = np.linalg.det(a)
+print(det_of_a)
+#as the determinant of the matrix consisting of coefficients is 0, so this system of eqaution doesn't has unique solution.It might has infinitely many or no solutions at all.
+combined_2 = np.hstack((a,b.reshape(2,1)))
+print(combined_2)
+
+
+plt.figure()
+x=np.linspace(-10,10,100)  #this one is for plotting the line as x-cordinate
+x11,y11,z11=combined_2[0]
+x12,y12,z12= combined_2[1]
+y11 = (7 + x) / 3  #getting the value of y from 1st equation
+y12 = ((3*x)-1) / 9  #here too but from the second equation
+plt.plot(x,y11,color="red")
+plt.plot(x,y12,color="blue")
+plt.show()
+#from the figure, we can observe that the two lines are parallel to each other, so there are no solutions to these two system of eqautions
