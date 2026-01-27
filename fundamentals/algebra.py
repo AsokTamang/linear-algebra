@@ -78,3 +78,16 @@ try:
 except np.linalg.LinAlgError as err:
     print(err)
 
+third_coef = np.array([[-1,1],[3,-9]])
+third_const = np.array([7,-21])
+final_matrix = np.hstack((third_coef,third_const.reshape(2,1)))
+print(final_matrix)
+#system of equation having infinitely many solutions
+x= np.linspace(-10,10,100)
+x7,y7,z7=final_matrix[0]  #here we are extracting the coefficients of x and y and the constant z from the first equation
+x8,y8,z8 = final_matrix[1]
+y7 = (7+x) / 3
+y8=((3*x)+21) / 9
+plt.plot(x,y7)
+plt.plot(x,y8)
+plt.show()
