@@ -1,4 +1,5 @@
 import numpy as np
+import matplotlib.pyplot as plt
 a = np.array([1,2,3,4])
 final = np.reshape(a,(2,2))
 print(f'The reshaped array is:', final)
@@ -32,4 +33,15 @@ print(np.linalg.det(coefficients))
 
 #horizontally stacking the two matrices
 #horizontally stacking the coefficients and constants and as the matrix constants has only one row , so we reshaped it into having 2 rows and 1 column
-np.hstack(( coefficients,constants.reshape(2,1)))
+combined_matrix = np.hstack(( coefficients,constants.reshape(2,1)))
+
+#plotting the line from these two system of eqautions
+plt.figure()
+x=np.linspace(-10,10,100)  #this one is for plotting the line as x-cordinate
+x1,y1,z1=combined_matrix[0]
+x2,y2,z2= combined_matrix[1]
+y1 = (7 + x) / 3  #getting the value of y from 1st equation
+y2 = (1 - (3*x)) / 3  #here too but from the second equation
+plt.plot(x,y1,color="red")
+plt.plot(x,y2,color="blue")
+plt.show()
