@@ -71,3 +71,10 @@ plt.plot(x,y11,color="red")
 plt.plot(x,y12,color="blue")
 plt.show()
 #from the figure, we can observe that the two lines are parallel to each other, so there are no solutions to these two system of eqautions
+
+#as we cannot solve the singular matrix, we will get an error while trying to solve the matrix of coefficients and constants of singular matrix using linalg.solve method
+try:
+    np.linalg.solve(a, b)  # since the matrix is a singular matrix , we are getting an error
+except np.linalg.LinAlgError as err:
+    print(err)
+
