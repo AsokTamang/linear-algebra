@@ -91,3 +91,15 @@ y8=((3*x)+21) / 9
 plt.plot(x,y7)
 plt.plot(x,y8)
 plt.show()
+
+
+try:
+    np.linalg.solve(third_coef, third_const)  # since the matrix is a singular matrix , we are getting an error
+except np.linalg.LinAlgError as err:
+    print(err)
+
+
+
+
+#Representing and Solving a System of Linear Equations using Matrices
+
