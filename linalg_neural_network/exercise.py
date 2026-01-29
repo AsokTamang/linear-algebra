@@ -66,3 +66,34 @@ def forward_propagation(X, parameters):
 
     return Y_hat
 print(forward_propagation(0,{'W': np.array([[-0.00607548, -0.00126136]]), 'b': np.array([[0.]])}))
+
+
+#compting the cost function
+def compute_cost(Y_hat, Y):
+    m = Y.shape[1]  #here m is the number of inputs
+    cost = np.sum((Y_hat - Y) ** 2) / (2 * m)
+    return cost
+
+
+#NEURAL NETWORK MODEL
+# GRADED FUNCTION: nn_model
+
+def nn_model(X, Y, num_iterations=1000, print_cost=False):
+    n_x = X.shape[0]  # number of inputs
+    # Initialize parameters
+    parameters = utils.initialize_parameters(n_x)
+    # Loop
+    for i in range(0, num_iterations):
+        # Forward propagation. Inputs: "X, parameters". Outputs: "Y_hat".
+        Y_hat = forward_propagation(X, parameters)
+        # Cost function. Inputs: "Y_hat, Y". Outputs: "cost".
+        cost = compute_cost(Y_hat, Y)
+        # Parameters update.
+        parameters = utils.train_nn(parameters, Y_hat, X, Y, learning_rate=0.001)
+
+        # Printing the cost every iteration.
+        if print_cost:
+            if i % 100 == 0:
+                print("Cost after iteration %i: %f" % (i, cost))
+
+    return parameters
