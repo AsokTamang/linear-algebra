@@ -23,13 +23,13 @@ print("Original vector:\n", v, "\n\n Result of the transformation:\n", w)
 
 def T_stretch(a, v):
 
-    ### START CODE HERE ###
+   
     # Define the transformation matrix
     T = np.array([[2, 0], [0, 1]])
 
     # Compute the transformation
     w = a * v  #stretching the vector v by a
-    ### END CODE HERE ###
+   
 
     return w
 
@@ -42,3 +42,10 @@ def T_rotation(theta, v):
     # Compute the transformation
     w = T @ v
     return w
+
+#combined 2D rotation and stretching
+def T_rotation_and_stretch(theta, a, v):
+   rotation_T = np.array([[np.cos(theta),-np.sin(theta)], [np.sin(theta),np.cos(theta)]])  #designing a rotational transformer matrix
+   stretch_T = a*v  #stretching the vector v by scalar a
+   w = rotation_T @ stretch_T
+   return w
