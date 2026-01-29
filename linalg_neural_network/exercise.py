@@ -19,7 +19,7 @@ print("Original vector:\n", v, "\n\n Result of the transformation:\n", w)
 #stretching a vector v by scalar A means just doing a scalar product between the vector v and scalar A
 
 
-# GRADED FUNCTION: T_stretch
+#function T_stretch
 
 def T_stretch(a, v):
 
@@ -33,3 +33,12 @@ def T_stretch(a, v):
 
     return w
 
+#function T_rotation
+# GRADED FUNCTION: T_rotation
+def T_rotation(theta, v):
+    # Define the transformation matrix
+    T = np.array([[np.cos(theta), -np.sin(theta)], [np.sin(theta), np.cos(theta)]])
+
+    # Compute the transformation
+    w = T @ v
+    return w
