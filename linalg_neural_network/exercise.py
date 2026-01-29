@@ -49,3 +49,20 @@ def T_rotation_and_stretch(theta, a, v):
    stretch_T = a*v  #stretching the vector v by scalar a
    w = rotation_T @ stretch_T
    return w
+
+
+#FUNCTION: forward_propagation
+
+def forward_propagation(X, parameters):
+    # Retrieving each parameter from the dictionary "parameters".
+    W = parameters["W"]
+    b = parameters["b"]
+
+    # Implement Forward Propagation to calculate Z.
+    ### START CODE HERE ### (~ 2 lines of code)
+    Z = (W @ X) + b
+    Y_hat = Z
+
+
+    return Y_hat
+print(forward_propagation(0,{'W': np.array([[-0.00607548, -0.00126136]]), 'b': np.array([[0.]])}))
