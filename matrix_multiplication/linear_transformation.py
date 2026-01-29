@@ -15,7 +15,7 @@ w = T(v)
 print("Original vector:\n", v, "\n\n Result of the transformation using the function T is:\n", w)
 
 
-#hotizontal scaling
+#hotizontal scaling(Dilation)
 def T_hscaling(v):
     A = np.array([[2, 0], [0, 1]])
     w = A @ v
