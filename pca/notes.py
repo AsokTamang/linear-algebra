@@ -10,3 +10,14 @@
 #then choosing higher eigen value, we get eigen vector by preserving the original dataset info
 #then we project the original data set using cov_matrix of original dataset * eigen_vector / (norm of eigen vector)
 
+import numpy as np
+import matplotlib.pyplot as plt
+
+A=np.array([[2,3],[3,1]])
+
+
+A_eig = np.linalg.eig(A)
+eigen_value=A_eig[0]
+eigen_vector = A_eig[1]
+print(eigen_value)
+print(eigen_vector)
