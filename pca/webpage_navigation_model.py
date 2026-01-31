@@ -24,3 +24,5 @@ print(f'X1:\n{X1}')
 
 #getting the eigen vector and eigen value of transformation matrix p
 eig_values,eig_vectors = np.linalg.eig(P)
+X_inf = eig_vectors[:,0]
+print('Eigen vector associated with eigen value 1',X_inf)
