@@ -24,5 +24,12 @@ print(f'X1:\n{X1}')
 
 #getting the eigen vector and eigen value of transformation matrix p
 eig_values,eig_vectors = np.linalg.eig(P)
-X_inf = eig_vectors[:,0]
+X_inf = eig_vectors[:,0]  #choosing the eigen vector with the highest eigen value
 print('Eigen vector associated with eigen value 1',X_inf)
+
+
+#as the current eigen vector has negative entries which is false in case of probabilities and their sum also doesnot add upto 1
+#so we are dividing each entries by the the sum of entries to make them positive and their sum to add upto 1
+X_inf = X_inf / sum(X_inf)  #this gives us the probability of web_browser being on the particular page
+
+

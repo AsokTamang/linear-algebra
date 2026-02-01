@@ -3,6 +3,8 @@ import glob
 from matplotlib import image
 import cv2
 import matplotlib.pyplot as plt
+import sys
+sys.path.append(r"C:\pythonprojects\linear_algebra\utils.py")
 
 
 def load_images(directory):
