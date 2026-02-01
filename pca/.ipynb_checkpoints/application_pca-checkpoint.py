@@ -39,12 +39,4 @@ def get_cov_matrix(X):
 cov_matrix = get_cov_matrix(X)
 
 eigenvals, eigenvecs = scipy.sparse.linalg.eigsh(cov_matrix, k=55)
-print('Eigen values are:', eigenvals)
-print('Eigen vectors are:', eigenvecs)
-
-#sorting the eigen values and eigen vectors from largest to smallest
-eigenvals = eigenvals[::-1]
-eigenvecs =  eigenvecs[:,::-1]
-print('Eigen values are:', eigenvals)
-print('Eigen vectors are:', eigenvecs)
-
+print(f'Ten largest eigenvalues: \n{eigenvals[-10:]}')
