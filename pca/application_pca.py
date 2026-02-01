@@ -11,7 +11,7 @@ print(f'\nour dataset has {len(imgs)} images of size {height}x{width} pixels\n')
 plt.imshow(imgs[0], cmap='gray')
 plt.show()
 
-flatten_images = np.array([img.reshape(-1) for img in imgs])  #flattening the image's pixels into single array
+flatten_images = np.array([img.reshape(-1) for img in imgs])  #flattening the image's pixels into single array,row-wise by default
 
 
 #centering the data of matrix
@@ -25,3 +25,14 @@ def center_data(Y):
 
     X = mean_matrix
     return X
+
+
+#getting the covariance matrix
+def get_cov_matrix(X):
+   #as the formulae for getting the covariance matrix is (A.T @ A )/ (no. of observations - 1)
+    cov_matrix = np.transpose(X) @ X
+    cov_matrix = cov_matrix / ((X.shape[0]) - 1)  # dividing by the number of observations in a matrix which is a row here
+
+    return cov_matrix
+
+
