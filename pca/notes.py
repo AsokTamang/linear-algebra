@@ -8,7 +8,7 @@
 #then using this covariance matrix we can obtain the eigen value using the characteristic polynomial
 #which can be done using det(cov_matrix - eigenvalue*identity_matrix of same size)
 #then choosing higher eigen value, we get eigen vector by preserving the original dataset info
-#then we project the original data set using cov_matrix of original dataset * eigen_vector / (norm of eigen vector)
+#then we project the original data set using cov_matrix of original dataset(centred data of the original data_set obtained by using the mean) * eigen_vector / (norm of eigen vector)
 
 import numpy as np
 import matplotlib.pyplot as plt

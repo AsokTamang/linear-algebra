@@ -48,3 +48,10 @@ eigenvecs =  eigenvecs[:,::-1]
 print('Eigen values are:', eigenvals)
 print('Eigen vectors are:', eigenvecs)
 
+def perform_PCA(X, eigenvecs, k):
+    V = eigenvecs[:, :k]  #choosing the eigen vectors , k PCAs means largest and second largest eigen values
+    Xred = X @ V  #centered dataset dot product eigen vector(K PCAs)
+    ### END CODE HERE ###
+    return Xred
+
+
